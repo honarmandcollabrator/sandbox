@@ -1,0 +1,89 @@
+//@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+@import '~@mdi/font/css/materialdesignicons.css';
+@import '~vuetify/dist/vuetify.min.css';
+
+
+
+@font-face {
+    font-family: hse;
+    src: url('/fonts/IRANSansWeb.woff');
+}
+
+
+/*
+   |--------------------------------------------------------------------------
+   | OVER RIDES
+   |--------------------------------------------------------------------------
+   |
+   | This styles come after all styles so they can override them.
+   | We also imported variables from same dir, They are like settings that
+   | can change in future and these are used in our styles instead of hard coded values.
+   |
+   */
+
+$font-size-root: 15px;
+$font-family: hse;
+
+html {
+    font-size: $font-size-root;
+}
+
+.v-input input {
+    font-size: $font-size-root;
+}
+
+.v-label {
+    font-size: $font-size-root;
+}
+
+#app {
+    font-family: $font-family !important;
+    letter-spacing: 0;
+}
+
+.v-application .headline, .v-application .title{
+    font-family: $font-family !important;
+    letter-spacing: 0;
+}
+
+.v-application .display-3, .v-application .display-4 {
+    font-family: $font-family !important;
+    letter-spacing: 0;
+}
+
+.v-application .display-1, .v-application .display-2 {
+    font-family: $font-family !important;
+    letter-spacing: 0;
+}
+
+.v-application .body-1, .v-application .caption {
+    font-weight: 400;
+    letter-spacing: -0.3px !important;
+    font-family: $font-family !important;
+}
+
+.v-btn {
+    border-radius: 28px;
+    letter-spacing: 0;
+}
+
+
+.v-tab {
+    letter-spacing: 0;
+}
+
+.v-pagination {
+    transform: scale(0.8);
+}
+
+
+.theme--light.v-stepper--vertical .v-stepper__content:not(:last-child) {
+    border-left: none !important;
+    border-right: 1px solid rgba(0,0,0,.12);
+}
+
+.v-stepper--vertical .v-stepper__content {
+    margin: -8px 36px -16px -36px;
+    padding: 16px 23px 16px 60px;
+    width: auto;
+}
