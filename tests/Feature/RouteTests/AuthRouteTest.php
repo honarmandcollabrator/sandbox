@@ -37,7 +37,7 @@ class AuthRouteTest extends TestCase
        | Auth
        |--------------------------------------------------------------------------
        |
-       | Routes = 7
+       | Routes = 8
        |
        |
        |
@@ -47,14 +47,38 @@ class AuthRouteTest extends TestCase
      * #1
      * @test
      */
-    public function auth_register()
+    public function auth_register_customer()
     {
         $this->withoutExceptionHandling();
         $url = route('auth.register');
         $response = $this->json('post', $url, [
             'name' => 'test name',
             'email' => 'test@gmail.com',
-            'username' => 'testUserName',
+            'phone' => '09191234567',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ]);
+        $response->assertStatus(Response::HTTP_OK);
+        $this->assertCount(1, User::all());
+        Notification::assertSentTo(User::first(), VerifyEmail::class);
+        $response->assertJsonStructure([
+            'access_token',
+            'token_type',
+            'expires_in'
+        ]);
+    }
+
+    /**
+     * #2
+     * @test
+     */
+    public function auth_register_translator()
+    {
+        $this->withoutExceptionHandling();
+        $url = route('auth.register');
+        $response = $this->json('post', $url, [
+            'name' => 'test name',
+            'email' => 'test@gmail.com',
             'password' => 'password',
             'password_confirmation' => 'password',
         ]);
@@ -70,7 +94,7 @@ class AuthRouteTest extends TestCase
 
 
     /**
-     * #2
+     * #3
      * @test
      */
     public function auth_login()
@@ -99,7 +123,7 @@ class AuthRouteTest extends TestCase
 
 
     /**
-     * #3
+     * #4
      * @test
      */
     public function auth_me()
@@ -123,7 +147,7 @@ class AuthRouteTest extends TestCase
 
 
     /**
-     * #4
+     * #5
      * @test
      */
     public function auth_refresh()
@@ -150,7 +174,7 @@ class AuthRouteTest extends TestCase
 
 
     /**
-     * #5
+     * #6
      * @test
      */
     public function auth_logout()
@@ -173,7 +197,7 @@ class AuthRouteTest extends TestCase
     }
 
 
-    /** @test #6 */
+    /** @test #7 */
     public function auth_forgot_password_email()
     {
         $user = factory(User::class)->create();
@@ -187,7 +211,7 @@ class AuthRouteTest extends TestCase
     }
 
 
-    /** @test #7 */
+    /** @test #8 */
     public function auth_forgot_password_reset()
     {
         $user = factory(User::class)->create();

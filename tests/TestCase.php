@@ -2,9 +2,8 @@
 
 namespace Tests;
 
-use App\Models\Network\Group;
+use App\Role;
 use App\User;
-use App\User\Role;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Validator;
@@ -13,15 +12,9 @@ abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
 
-    protected $normalUser;
-    protected $silverUser;
-    protected $goldUser;
-
-    protected $superAdmin;
     protected $admin;
-    protected $networkManager;
-    protected $jobManager;
-    protected $contactManager;
+    protected $translator;
+    protected $customer;
 
     /**
      * @param $user
@@ -37,48 +30,24 @@ abstract class TestCase extends BaseTestCase
 
     protected function createRoles()
     {
-        Role::create(['name' => 'super_admin']);
         Role::create(['name' => 'admin']);
-        Role::create(['name' => 'network_manager']);
-        Role::create(['name' => 'job_manager']);
-        Role::create(['name' => 'contact_manager']);
-
-        Role::create(['name' => 'gold']);
-        Role::create(['name' => 'silver']);
-        Role::create(['name' => 'normal']);
+        Role::create(['name' => 'translator']);
+        Role::create(['name' => 'customer']);
     }
 
     protected function createUsers()
     {
         $this->createRoles();
 
-        $this->normalUser = factory(User::class)->create();
-        $this->silverUser = factory(User::class)->state('silver')->create();
-        $this->goldUser = factory(User::class)->state('gold')->create();
-
-        $this->superAdmin = factory(User::class)->state('super_admin')->create();
         $this->admin = factory(User::class)->state('admin')->create();
-        $this->networkManager = factory(User::class)->state('network_manager')->create();
-        $this->jobManager = factory(User::class)->state('job_manager')->create();
-        $this->contactManager = factory(User::class)->state('contact_manager')->create();
-    }
-
-
-    protected function storeGroup($user)
-    {
-        $url = route('network.group.store');
-        return $this->json('post', $url, [
-            'token' => $this->getToken($user),
-            'username' => 'group_username',
-            'name' => 'test group',
-            'about' => 'here is a description about the group',
-        ]);
+        $this->translator = factory(User::class)->state('translator')->create();
+        $this->customer = factory(User::class)->create();
     }
 
     protected function banUser($user)
     {
         $url = route('user.ban', ['user' => $user->id]);
-        $this->json('put', $url, ['token' => $this->getToken($this->superAdmin)]);
+        $this->json('put', $url, ['token' => $this->getToken($this->admin)]);
     }
 
 
