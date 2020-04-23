@@ -2630,6 +2630,61 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "HomePage"
 });
@@ -2814,10 +2869,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
-//
 //
 //
 //
@@ -31983,19 +32034,26 @@ var render = function() {
       _c(
         "v-row",
         {
-          staticClass: "text-center justify-center align-center",
-          staticStyle: { height: "85vh" }
+          staticClass: "mt-n5 justify-center",
+          staticStyle: {
+            height: "91vh",
+            background:
+              "url('/images/application/hero-small.jpg') no-repeat center center",
+            "background-size": "cover !important"
+          }
         },
         [
           _c(
             "div",
+            { staticClass: "text-center" },
             [
               _c(
                 "v-row",
-                { staticClass: "text-center justify-center align-center" },
+                {
+                  staticClass: "text-center justify-center align-center mt-12"
+                },
                 [
                   _c("v-img", {
-                    staticClass: "text-center",
                     attrs: {
                       "max-width": "250",
                       src: "/images/application/tootiko-Logo.png"
@@ -32008,7 +32066,7 @@ var render = function() {
               _c(
                 "h1",
                 {
-                  staticClass: "display-2 text-center",
+                  staticClass: "display-1 text-center",
                   staticStyle: { "line-height": "76px" }
                 },
                 [
@@ -32047,87 +32105,333 @@ var render = function() {
       ),
       _vm._v(" "),
       _c(
-        "v-row",
-        { attrs: { align: "center" } },
+        "v-container",
         [
           _c(
-            "v-col",
-            { attrs: { cols: "12", md: "6" } },
+            "v-row",
             [
               _c(
-                "v-card",
-                { staticClass: "mx-auto", attrs: { shaped: "" } },
+                "v-col",
+                { staticClass: "text-center", attrs: { cols: "12", md: "3" } },
                 [
-                  _c("v-img", {
-                    attrs: {
-                      src: "/images/application/main-page-find-jobs.svg"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-card-title", [
-                    _vm._v(
-                      "\n                    کسب درآمد از ترجمه\n                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("v-card-subtitle", [
-                    _vm._v(
-                      "\n                    در آزمون طوطیکو شرکت کنید و سپس با ترجمه کردن کسب درآمد کنید\n                "
-                    )
-                  ]),
-                  _vm._v(" "),
                   _c(
-                    "v-card-actions",
+                    "v-tooltip",
+                    {
+                      attrs: { bottom: "", color: "purple" },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var on = ref.on
+                            return [
+                              _c(
+                                "div",
+                                _vm._g({}, on),
+                                [
+                                  _c(
+                                    "v-row",
+                                    { attrs: { justify: "center" } },
+                                    [
+                                      _c("v-img", {
+                                        attrs: {
+                                          "max-width": "150",
+                                          src: "/images/application/step1.png"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(
+                                    "\n                            سفارش ترجمه ات رو ثبت کن\n                        "
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          }
+                        }
+                      ])
+                    },
                     [
-                      _c("v-btn", { attrs: { color: "purple", text: "" } }, [
+                      _vm._v(" "),
+                      _c("span", [
                         _vm._v(
-                          "\n                        ترجمه\n                    "
+                          "روی دکمه ثبت سفارش کلیک کن و فایل یا لینک ترجمه ات رو همراه با اطلاعات سفارش به ما بده"
                         )
                       ])
-                    ],
-                    1
+                    ]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { staticClass: "text-center", attrs: { cols: "12", md: "3" } },
+                [
+                  _c(
+                    "v-tooltip",
+                    {
+                      attrs: { bottom: "", color: "purple" },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var on = ref.on
+                            return [
+                              _c(
+                                "div",
+                                _vm._g({}, on),
+                                [
+                                  _c(
+                                    "v-row",
+                                    { attrs: { justify: "center" } },
+                                    [
+                                      _c("v-img", {
+                                        attrs: {
+                                          "max-width": "150",
+                                          src: "/images/application/step2.png"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(
+                                    "\n                            منتظر شمارش کلمات و مترجم باش\n                        "
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          }
+                        }
+                      ])
+                    },
+                    [
+                      _vm._v(" "),
+                      _c("span", [
+                        _vm._v(
+                          "چند دقیقه منتظر بمون تا کارشناسا کلمات رو شمارش کنن و همینطور یه مترجم مناسب با متن انتخاب کنن"
+                        )
+                      ])
+                    ]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { staticClass: "text-center", attrs: { cols: "12", md: "3" } },
+                [
+                  _c(
+                    "v-tooltip",
+                    {
+                      attrs: { bottom: "", color: "purple" },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var on = ref.on
+                            return [
+                              _c(
+                                "div",
+                                _vm._g({}, on),
+                                [
+                                  _c(
+                                    "v-row",
+                                    { attrs: { justify: "center" } },
+                                    [
+                                      _c("v-img", {
+                                        attrs: {
+                                          "max-width": "150",
+                                          src: "/images/application/step3.png"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(
+                                    "\n                            به راحتی پرداخت کن\n                        "
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          }
+                        }
+                      ])
+                    },
+                    [
+                      _vm._v(" "),
+                      _c("span", [
+                        _vm._v(
+                          "به راحتی با هر کارت عضو شتابی، هزینه مترجم رو پرداخت کن"
+                        )
+                      ])
+                    ]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { staticClass: "text-center", attrs: { cols: "12", md: "3" } },
+                [
+                  _c(
+                    "v-tooltip",
+                    {
+                      attrs: { bottom: "", color: "success" },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var on = ref.on
+                            return [
+                              _c(
+                                "div",
+                                _vm._g({}, on),
+                                [
+                                  _c(
+                                    "v-row",
+                                    { attrs: { justify: "center" } },
+                                    [
+                                      _c("v-img", {
+                                        attrs: {
+                                          "max-width": "150",
+                                          src: "/images/application/step4.png"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(
+                                    "\n                            فایل ترجمه ات رو تحویل بگیر\n                        "
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          }
+                        }
+                      ])
+                    },
+                    [
+                      _vm._v(" "),
+                      _c("span", [
+                        _vm._v(
+                          "بعد از مهلتی که برای مترجم انتخاب کردی ، فایل ترجمه شده ات رو تحویل بگیر و طوطیکو رو به دوستات معرفی کن!"
+                        )
+                      ])
+                    ]
                   )
                 ],
                 1
               )
             ],
             1
-          ),
-          _vm._v(" "),
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-container",
+        [
           _c(
-            "v-col",
-            { attrs: { cols: "12", md: "6" } },
+            "v-row",
+            { attrs: { align: "center" } },
             [
               _c(
-                "v-card",
-                { staticClass: "mx-auto", attrs: { shaped: "" } },
+                "v-col",
+                { attrs: { cols: "12", md: "6" } },
                 [
-                  _c("v-img", {
-                    attrs: {
-                      src: "/images/application/main-page-connection.svg"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-card-title", [
-                    _vm._v(
-                      "\n                    به راحتی مقالات خود را ترجمه کنید\n                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("v-card-subtitle", [
-                    _vm._v(
-                      "\n                    مقالات و متون انگلیسی خود را به راحتی ترجمه کنید.\n                "
-                    )
-                  ]),
-                  _vm._v(" "),
                   _c(
-                    "v-card-actions",
+                    "v-card",
+                    { staticClass: "mx-auto", attrs: { shaped: "" } },
                     [
-                      _c("v-btn", { attrs: { color: "purple", text: "" } }, [
+                      _c("v-img", {
+                        attrs: {
+                          src: "/images/application/main-page-find-jobs.svg"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-card-title", [
                         _vm._v(
-                          "\n                        ثبت نام | ورود\n                    "
+                          "\n                        کسب درآمد از ترجمه\n                    "
                         )
-                      ])
+                      ]),
+                      _vm._v(" "),
+                      _c("v-card-subtitle", [
+                        _vm._v(
+                          "\n                        در صورتی که در زمینه ترجمه متخصص هستید، در آزمون ورودی طوطیکو شرکت کنید و سپس با ترجمه‌کردن کسب درآمد کنید.\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c(
+                            "v-btn",
+                            { attrs: { color: "purple", text: "" } },
+                            [
+                              _vm._v(
+                                "\n                            ترجمه\n                        "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { attrs: { cols: "12", md: "6" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "mx-auto", attrs: { shaped: "" } },
+                    [
+                      _c("v-img", {
+                        attrs: {
+                          src: "/images/application/main-page-connection.svg"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-card-title", [
+                        _vm._v(
+                          "\n                        ترجمه مقالات خود را به حرفه‌ای‌ها بسپارید.\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("v-card-subtitle", [
+                        _vm._v(
+                          "\n                        مقالات و متون انگلیسی خود را به راحتی به مترجمین متخصص در حوزه مربوطه بسپارید.\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c(
+                            "v-btn",
+                            { attrs: { color: "purple", text: "" } },
+                            [
+                              _vm._v(
+                                "\n                            ثبت نام | ورود\n                        "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
                     ],
                     1
                   )
@@ -32398,48 +32702,6 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c(
-            "v-btn",
-            {
-              attrs: { small: "", icon: "", color: "success" },
-              on: {
-                click: function($event) {
-                  return _vm.$router.go()
-                }
-              }
-            },
-            [_c("v-icon", [_vm._v("mdi-sync")])],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-btn",
-            {
-              attrs: { small: "", icon: "" },
-              on: {
-                click: function($event) {
-                  return _vm.$router.forward()
-                }
-              }
-            },
-            [_c("v-icon", [_vm._v("mdi-arrow-right-bold-box")])],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-btn",
-            {
-              attrs: { small: "", icon: "" },
-              on: {
-                click: function($event) {
-                  return _vm.$router.back()
-                }
-              }
-            },
-            [_c("v-icon", [_vm._v("mdi-arrow-left-bold-box")])],
-            1
-          ),
-          _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
           _c(
@@ -32500,6 +32762,7 @@ var render = function() {
         [
           _c(
             "v-container",
+            { attrs: { fluid: "" } },
             [
               _c(
                 "v-row",
@@ -32517,12 +32780,29 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-footer",
-        { staticClass: "font-weight-medium", attrs: { id: "footer" } },
+        {
+          staticClass: "font-weight-medium justify-end align-end",
+          staticStyle: {
+            height: "140px",
+            background: "url('images/application/repeat-1920-140.png')"
+          },
+          attrs: { id: "footer" }
+        },
         [
-          _c("v-col", { staticClass: "text-center", attrs: { cols: "12" } }, [
-            _vm._v("\n            " + _vm._s(new Date().getFullYear()) + " — "),
-            _c("strong", [_vm._v("TOOTIKO")])
-          ])
+          _c(
+            "v-col",
+            {
+              staticClass: "text-center",
+              staticStyle: { color: "#fff" },
+              attrs: { cols: "12" }
+            },
+            [
+              _vm._v(
+                "\n             " + _vm._s(new Date().getFullYear()) + " — "
+              ),
+              _c("strong", [_vm._v("TOOTIKO")])
+            ]
+          )
         ],
         1
       )

@@ -6,18 +6,18 @@
         <v-app-bar clipped-right app>
             <v-app-bar-nav-icon @click.stop="handleDrawer"></v-app-bar-nav-icon>
 
-            <v-btn small @click="$router.go()" icon color="success">
-                <v-icon>mdi-sync</v-icon>
-            </v-btn>
+            <!--   <v-btn small @click="$router.go()" icon color="success">
+                   <v-icon>mdi-sync</v-icon>
+               </v-btn>
 
-            <v-btn small @click="$router.forward()" icon>
-                <v-icon>mdi-arrow-right-bold-box</v-icon>
-            </v-btn>
+               <v-btn small @click="$router.forward()" icon>
+                   <v-icon>mdi-arrow-right-bold-box</v-icon>
+               </v-btn>
 
-            <v-btn small @click="$router.back()" icon>
-                <v-icon>mdi-arrow-left-bold-box</v-icon>
-            </v-btn>
-
+               <v-btn small @click="$router.back()" icon>
+                   <v-icon>mdi-arrow-left-bold-box</v-icon>
+               </v-btn>
+   -->
 
             <v-spacer></v-spacer>
 
@@ -42,21 +42,17 @@
 
         </v-app-bar>
         <v-content>
-            <v-container>
-
+            <v-container fluid>
                 <v-row>
-
                     <v-col cols="12">
                         <slot name="content"></slot>
                     </v-col>
-
                 </v-row>
-
-
             </v-container>
         </v-content>
-        <v-footer id="footer" class="font-weight-medium">
-            <v-col class="text-center" cols="12">
+        <v-footer id="footer" class="font-weight-medium justify-end align-end"
+                  style="height: 140px; background: url('images/application/repeat-1920-140.png')">
+            <v-col class="text-center" cols="12" style="color:#fff;">
                 {{ new Date().getFullYear() }} — <strong>TOOTIKO</strong>
             </v-col>
         </v-footer>
