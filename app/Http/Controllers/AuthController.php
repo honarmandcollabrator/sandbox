@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\User\UserRequest;
-use App\Http\Resources\User\UserResource;
-use App\Models\Network\Timeline;
+use App\Http\Requests\UserRequest;
+use App\Http\Resources\UserResource;
+use App\Role;
 use App\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -23,19 +23,6 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('JWT', ['except' => ['login', 'register']]);
-    }
-
-    public function register(UserRequest $request)
-    {
-        User::create([
-            'email' => $request->email,
-            'username' => $request->username,
-            'name' => $request->name,
-            'password' => bcrypt($request->password),
-            'role_id' => User\Role::where('name', 'normal')->first()->id,
-        ]);
-
-        return $this->login();
     }
 
     /**

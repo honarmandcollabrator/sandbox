@@ -15,7 +15,7 @@ class CreateCheckoutsTable extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('cost');
+            $table->unsignedBigInteger('cost');
             $table->timestamp('payed_at');
             $table->timestamps();
             /*===== Relationships =====*/

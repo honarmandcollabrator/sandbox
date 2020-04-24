@@ -15,7 +15,7 @@ class CreateTranslatorIncomesTable extends Migration
     {
         Schema::create('translator_incomes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('value');
+            $table->unsignedBigInteger('payment');
             $table->text('description');
             $table->boolean('is_penalty');
             $table->timestamps();

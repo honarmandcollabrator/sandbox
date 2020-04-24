@@ -37,7 +37,7 @@ class AuthRouteTest extends TestCase
        | Auth
        |--------------------------------------------------------------------------
        |
-       | Routes = 8
+       | Routes = 7
        |
        |
        |
@@ -68,29 +68,6 @@ class AuthRouteTest extends TestCase
         ]);
     }
 
-    /**
-     * #2
-     * @test
-     */
-    public function auth_register_translator()
-    {
-        $this->withoutExceptionHandling();
-        $url = route('auth.register');
-        $response = $this->json('post', $url, [
-            'name' => 'test name',
-            'email' => 'test@gmail.com',
-            'password' => 'password',
-            'password_confirmation' => 'password',
-        ]);
-        $response->assertStatus(Response::HTTP_OK);
-        $this->assertCount(1, User::all());
-        Notification::assertSentTo(User::first(), VerifyEmail::class);
-        $response->assertJsonStructure([
-            'access_token',
-            'token_type',
-            'expires_in'
-        ]);
-    }
 
 
     /**
@@ -99,11 +76,12 @@ class AuthRouteTest extends TestCase
      */
     public function auth_login()
     {
+        $this->withoutExceptionHandling();
         $url = route('auth.register');
         $this->json('post', $url, [
             'name' => 'test name',
             'email' => 'test@gmail.com',
-            'username' => 'testUserName',
+            'phone' => '09122899787',
             'password' => 'password',
             'password_confirmation' => 'password',
         ]);
@@ -132,7 +110,7 @@ class AuthRouteTest extends TestCase
         $this->json('post', $url, [
             'name' => 'test name',
             'email' => 'test@gmail.com',
-            'username' => 'testUserName',
+            'phone' => '09158899878',
             'password' => 'password',
             'password_confirmation' => 'password',
         ]);
@@ -156,7 +134,7 @@ class AuthRouteTest extends TestCase
         $this->json('post', $url, [
             'name' => 'test name',
             'email' => 'test@gmail.com',
-            'username' => 'testUserName',
+            'phone' => '09121234567',
             'password' => 'password',
             'password_confirmation' => 'password',
         ]);
@@ -183,7 +161,7 @@ class AuthRouteTest extends TestCase
         $this->json('post', $url, [
             'name' => 'test name',
             'email' => 'test@gmail.com',
-            'username' => 'testUserName',
+            'phone' => '09121234567',
             'password' => 'password',
             'password_confirmation' => 'password',
         ]);
@@ -214,6 +192,7 @@ class AuthRouteTest extends TestCase
     /** @test #8 */
     public function auth_forgot_password_reset()
     {
+        $this->withoutExceptionHandling();
         $user = factory(User::class)->create();
         $url = route('auth.forgot.password.reset');
         $response = $this->json('post', $url, [

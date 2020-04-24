@@ -2,7 +2,7 @@
 
 namespace App\Traits;
 
-use App\Http\Resources\User\UserResource;
+use App\Http\Resources\UserResource;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\Login;
 use App\User;

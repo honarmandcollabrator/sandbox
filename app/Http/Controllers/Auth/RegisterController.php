@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\User\UserRequest;
-use App\Http\Resources\User\UserResource;
+use App\Http\Requests\UserRequest;
+use App\Http\Resources\UserResource;
+use App\Role;
 use App\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -70,9 +71,9 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
-            'username' => $request['username'],
+            'phone' => $request['phone'],
             'password' => Hash::make($request['password']),
-            'role_id' => User\Role::where('name', 'normal')->first()->id,
+            'role_id' => Role::where('name', 'customer')->first()->id,
         ]);
 
         event(new Registered($user));

@@ -2,23 +2,8 @@
 
 namespace App;
 
-use App\Models\Chat\Session;
-use App\Models\Contact\Contact;
-use App\Models\Globals\City;
-use App\Models\Globals\Country;
-use App\Models\Globals\Province;
-use App\Models\Job\Company;
-use App\Models\Job\Resume;
-//use App\Models\Question\Like;
-use App\Models\Network\Comment;
-use App\Models\Network\Group;
-use App\Models\Network\Hashtag;
-use App\Models\Network\Post;
-use App\Models\Network\Timeline;
-use App\Models\Question\Question;
-use App\Models\User\UserExperience;
 use App\Notifications\VerifyEmail;
-use App\User\Role;
+use App\Role;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -277,10 +262,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail
         parent::boot();
 
         static::creating(function ($user) {
-            $timeline = Timeline::create([
-                'type' => 'user',
-            ]);
-            $user->timeline_id = $timeline->id;
+            //
         });
 
 
@@ -334,31 +316,6 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail
             return true;
         }
         return false;
-    }
-
-
-    /**
-     * @param $input
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public
-    function friends()
-    {
-        $first = $this->request_senders()->where('status', 'approved')->get();
-        $second = $this->request_recipients()->where('status', 'approved')->get();
-        return $first->merge($second);
-    }
-
-    /**
-     * @param $input
-     * @return \Illuminate\Support\Collection
-     */
-    public
-    function myFriendsIds()
-    {
-        $friendsIds1 = $this->request_senders()->where('status', 'approved')->pluck('sender_id');
-        $friendsIds2 = $this->request_recipients()->where('status', 'approved')->pluck('recipient_id');
-        return $friendsIds1->merge($friendsIds2);
     }
 
 

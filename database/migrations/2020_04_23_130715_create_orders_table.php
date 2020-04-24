@@ -22,7 +22,8 @@ class CreateOrdersTable extends Migration
             $table->boolean('needs_subtitles')->default(0);
             $table->boolean('needs_typing_formulas')->default(0);
             $table->boolean('is_secret')->default(0);
-            $table->string('original_file');
+            $table->string('original_file')->nullable();
+            $table->string('original_file_link')->nullable();
             $table->string('translated_file')->nullable();
             $table->string('title')->nullable();
             $table->text('description')->nullable();
